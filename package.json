@@ -1,0 +1,22 @@
+{
+  "name": "pc-controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ffi": "^2.3.0",
+    "keycode": "^2.2.0",
+    "ref-napi": "^1.4.1",
+    "win32-api": "^6.1.0",
+    "win32-def": "^3.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
