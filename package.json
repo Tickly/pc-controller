@@ -1,9 +1,10 @@
 {
   "name": "pc-controller",
   "version": "1.0.0",
-  "description": "",
+  "description": "可以在家里通过手机控制电脑播放音乐",
   "main": "index.js",
   "scripts": {
+    "start": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,12 +12,27 @@
   "dependencies": {
     "ffi": "^2.3.0",
     "keycode": "^2.2.0",
+    "koa": "^2.7.0",
     "ref-napi": "^1.4.1",
     "win32-api": "^6.1.0",
     "win32-def": "^3.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.5",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
