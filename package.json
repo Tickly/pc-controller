@@ -14,7 +14,6 @@
     "keycode": "^2.2.0",
     "koa": "^2.7.0",
     "ref-napi": "^1.4.1",
-    "win32-api": "^6.1.0",
     "win32-def": "^3.3.0"
   },
   "devDependencies": {
@@ -27,6 +26,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "koa-route": "^3.2.0",
+    "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.1.5",
     "vue": "^2.6.10",

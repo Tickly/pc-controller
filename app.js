@@ -2,24 +2,27 @@ const path = require('path');
 const Koa = require('koa');
 const views = require('koa-views');
 const serve = require('koa-static');
-const route = require('koa-route')
 
-import Keyboard from './Keyboard'
+import Router from 'koa-router'
+import Media from './media'
 
 const app = module.exports = new Koa();
 
-app.use(views(path.join(__dirname, 'views')));
 
+let router = new Router();
+
+
+app.use(views(path.join(__dirname, 'views')));
 app.use(serve(path.join(__dirname, 'public')));
 
 
-app.use(route.get('/next', ctx => {
-    Keyboard.press(176)
-}))
-app.use(route.get('/prev', ctx => {
-    Keyboard.press(177)
-}))
+router
+    .get('/next', Media.next)
+    .get('/prev', Media.prev)
 
+app
+    .use(router.routes())
+    .use(router.allowedMethods())
 
 app.use(async function (ctx) {
     await ctx.render('index')
