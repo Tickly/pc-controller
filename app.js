@@ -19,6 +19,11 @@ app.use(serve(path.join(__dirname, 'public')));
 router
     .get('/next', Media.next)
     .get('/prev', Media.prev)
+    .get('/volume_down',Media.volume_down)
+    .get('/volume_up',Media.volume_up)
+    .get('/volume_mute',Media.volume_mute)
+    .get('/stop',Media.stop)
+    .get('/play_pause',Media.play_pause)
 
 app
     .use(router.routes())

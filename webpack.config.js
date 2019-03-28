@@ -24,10 +24,21 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
+            },
+            {
+                test: /\.sass$/,
+                loader: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ]
             }
         ]
     },
     plugins: [
         new VueLoaderPlugin(),
-    ]
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, 'public'),
+    }
 }
