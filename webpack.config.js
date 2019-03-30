@@ -1,5 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
 
 module.exports = {
     mode: 'development',
@@ -26,7 +27,7 @@ module.exports = {
                 loader: 'vue-loader',
             },
             {
-                test: /\.sass$/,
+                test: /\.scss$/,
                 loader: [
                     'style-loader',
                     'css-loader',
@@ -37,8 +38,15 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
+        hotOnly: true,
         contentBase: path.resolve(__dirname, 'public'),
+        // host: '0.0.0.0',
+        port: 8080,
+        proxy: {
+            '/': 'http://localhost:3000'
+        }
     }
 }
