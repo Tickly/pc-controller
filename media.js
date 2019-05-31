@@ -16,12 +16,25 @@ switch (os.platform()) {
 
 
 export default {
-    next(ctx) {
-        keyboard.press(176);
-        ctx.body = null;
+    volume_mute() {
+        keyboard.press(173)
     },
-    prev(ctx) {
+    volume_down() {
+        keyboard.press(174)
+    },
+    volume_up() {
+        keyboard.press(175)
+    },
+    next() {
+        keyboard.press(176)
+    },
+    prev() {
         keyboard.press(177)
-        ctx.body = null;
-    }
+    },
+    stop() {
+        keyboard.press(178)
+    },
+    play_pause() {
+        keyboard.press(179)
+    },
 }
