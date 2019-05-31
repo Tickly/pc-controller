@@ -1,5 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
 
 module.exports = {
     mode: 'development',
@@ -10,8 +11,7 @@ module.exports = {
         filename: 'js/dist.js',
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
@@ -24,10 +24,19 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
+            },
+            {
+                test: /\.css$/,
+                loader: [
+                    'style-loader',
+                    'css-loader',
+                ]
+
             }
         ]
     },
     plugins: [
         new VueLoaderPlugin(),
+        // new webpack.HotModuleReplacementPlugin(),
     ]
 }
